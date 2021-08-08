@@ -1,0 +1,68 @@
+.App {
+    background-color: #282c34;
+    min-height: 100vh;
+    color: white;
+}
+
+.main {
+    min-height: 90vh;
+}
+
+.navbar-my {
+    background-color: #282c34;
+    border-bottom: 1px solid gray;
+}
+
+.App-logo {
+    width: 230px;
+    pointer-events: none;
+}
+
+.game-screen {
+    width: 100%;
+}
+
+.start-btn {
+    background: linear-gradient(145deg, #198754, #2bda89);
+    padding: 0.5rem 2rem !important;
+    border-radius: 0.8rem !important;
+    border: 2px solid #2bda89 !important;
+}
+
+.hint-div {
+    border: 1px solid grey;
+    border-radius: 1rem;
+    width: 79% !important;
+    max-height: 45vh;
+    overflow-y: auto;
+}
+
+.btn-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.animation-btn {
+    animation: pulse-animation 1500ms ease-out infinite;
+}
+
+.animation-btn:hover {
+    animation: none;
+}
+
+@keyframes pulse-animation {
+    0% {
+        border-color: #0d6efd;
+        color: #0d6efd;
+    }
+    50% {
+        border-color: #6faaf8;
+        color: #6faaf8;
+    }
+    100% {
+        border-color: #0d6efd;
+        color: #0d6efd;
+    }
+}
