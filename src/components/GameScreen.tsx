@@ -14,10 +14,10 @@ export const GameScreen: React.FC = () => {
     const [alertState, setAlertState] = useState({show: false, variant: '', title: '', body: ''})
 
     useEffect(() => {
-        if (state.dataReady && state.isStarted) {
+        if (state.dataReady && state.isStarted && itemNumberInList < state.data.length) {
             setInpVal(generateSecretString(state.data[itemNumberInList]?.name))
         }
-    }, [itemNumberInList, state.dataReady, state.isStarted])
+    }, [itemNumberInList, state.data, state.dataReady, state.isStarted])
 
     useEffect(() => {
         setShowHint(false)
@@ -30,7 +30,7 @@ export const GameScreen: React.FC = () => {
     }
 
     const onGuessHandler = (): void => {
-        if (itemNumberInList > state.data.length - 1) return
+        if (itemNumberInList >= state.data.length) return
 
         if (inpVal.toLocaleLowerCase().trim() === state.data[itemNumberInList].name.toLocaleLowerCase()) {
             setItemNumberInList(prevState => prevState + 1)

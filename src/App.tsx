@@ -27,7 +27,7 @@ export const App: React.FC = () => {
             setModalState({show: true, title: 'You Loose!'})
             dispatch({type: ActionTypes.EndGame})
         }
-    }, [state.guesses, state.playerLifes])
+    }, [state.data.length, state.dataReady, state.guesses, state.playerLifes])
 
     const modalContent = (
         <>
